@@ -1,9 +1,8 @@
 # Class
+
 class Employees:
-    second_name = "Juma"
     raise_amount = 1.05
 
-    # Construct   Constructor with __init__ Function
     def __init__(self, name, gender, salary):
         # Parameters
         self.name = name
@@ -23,7 +22,19 @@ class Employees:
         cls.raise_amount = amount
 
 
-#
+class Developer(Employees):
+    def __init__(self, name, gender, salary, programming_language):
+        super().__init__(name, gender, salary)
+        self.salary = salary
+        self.programming_language = programming_language
+        self.full_name = name
+
+
+developer1 = Developer("Cynthia", "Female", 60000, "Python")
+developer2 = Developer("Paul", "Male", 60000, "Java")
+
+print(f"{developer1.full_name} develops using {developer1.programming_language} and earns {developer1.salary} ")
+
 emp1 = Employees("Felix", "Male", 10000)
 emp2 = Employees("Peter", "Male", 10000)
 emp3 = Employees("Joseph", "Male", 10000)
@@ -52,7 +63,6 @@ print(Employees.raise_amount)
 print(emp1.salary)
 
 
-#
 class Students:
     def __init__(self, first_name, last_name, subject1, subject2):
         self.first_name = first_name
@@ -76,3 +86,28 @@ print(f"Name: {B1.full_name} Total Marks: {B1.total_marks}")
 print(f"Name: {B2.full_name} Total Marks: {B2.total_marks}")
 print(f"Name: {B3.full_name}  Total Marks: {B3.total_marks}")
 print(B1.report())
+
+
+class Students:
+    class Undergraduate(Students):
+        def __init__(self, student_id, surname, first_name, middle_name, last_name, course, year_of_enrolment):
+            super().__init__()
+            self.student_id = student_id
+            self.surname = surname
+            self.first_name = first_name
+            self.middle_name = middle_name
+            self.last_name = last_name
+            self.course = course
+            self.year_of_enrolment = year_of_enrolment
+            self.full_name = f"{self.surname} {self.first_name} {self.middle_name} {self.last_name}"
+
+    class PostGraduate(Students):
+        def __init__(self, student_id, surname, first_name, middle_name, last_name, course, year_of_enrolment):
+            self.student_id = student_id
+            self.surname = surname
+            self.first_name = first_name
+            self.middle_name = middle_name
+            self.last_name = last_name
+            self.course = course
+            self.year_of_enrolment = year_of_enrolment
+            self.full_name = f"{self.surname}{self.first_name}{self.middle_name}{self.last_name}"
