@@ -91,7 +91,7 @@ print(B1.report())
 class Students:
     class Undergraduate(Students):
         def __init__(self, student_id, surname, first_name, middle_name, last_name, course, year_of_enrolment):
-            super().__init__()
+            super().__init__(self)
             self.student_id = student_id
             self.surname = surname
             self.first_name = first_name
@@ -103,6 +103,7 @@ class Students:
 
     class PostGraduate(Students):
         def __init__(self, student_id, surname, first_name, middle_name, last_name, course, year_of_enrolment):
+            super().__init__(self)
             self.student_id = student_id
             self.surname = surname
             self.first_name = first_name
