@@ -1,8 +1,6 @@
 # Class
 
 class Employees:
-    raise_amount = 1.05
-
     def __init__(self, name, gender, salary):
         # Parameters
         self.name = name
